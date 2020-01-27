@@ -1,0 +1,2 @@
+# MessageFilter
+Plugin for BetterDiscord
