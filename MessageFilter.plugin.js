@@ -90,7 +90,7 @@ const config = {
 				github_username: "HooferDevelops"
 			}
 		],
-		version: "1.1.0",
+		version: "1.2.0",
 		description: "Modify the way you send messages.",
 		github:
 			"https://github.com/HooferDevelops/MessageFilter/",
@@ -103,7 +103,7 @@ const config = {
 			title: "Stuff",
 			type: "fixed",
 			items: [
-				"Released!"
+				"Added right click event for opening settings on button (1.2.0)"
 			]
 		}
 
@@ -454,8 +454,16 @@ var MessageFilter = (() => {
 										messageButtonInner.appendChild(messageButtonMask);
 										messageButton.appendChild(messageButtonInner);
 										daButtons.insertBefore(messageButton, daButtons.firstChild);
+                                        
+                                        messageButton.addEventListener("contextmenu", (e)=>{
+                                            if (e.button == 2){
+                                                BdApi.getPlugin("MessageFilter").showSettingsModal();
+                                            }
+                                        })
 
-										messageButton.onclick = () => {
+
+										messageButton.onclick = (e) => {
+                                            console.log(e.button);
 											var channel = DiscordAPI.currentChannel;
 
 											// Only send the embed if the user has permissions to embed links.
