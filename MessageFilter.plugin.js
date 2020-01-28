@@ -91,7 +91,7 @@ const config = {
 				github_username: "HooferDevelops"
 			}
 		],
-		version: "1.2.0",
+		version: "1.2.1",
 		description: "Modify the way you send messages.",
 		github:
 			"https://github.com/HooferDevelops/MessageFilter/",
