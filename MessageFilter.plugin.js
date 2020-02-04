@@ -60,6 +60,10 @@ var chars = [
 list = [
 
 ]
+
+stylesheet = document.styleSheets[0]
+stylesheet.insertRule(".sizeIcon-1-kvKI { width: 40px; }", 0);
+
 function applyCharMap(map, text) {
     var map = chars[map]
     let out = "";
@@ -91,7 +95,7 @@ const config = {
 				github_username: "HooferDevelops"
 			}
 		],
-		version: "1.2.1",
+		version: "1.3.0",
 		description: "Modify the way you send messages.",
 		github:
 			"https://github.com/HooferDevelops/MessageFilter/",
@@ -104,7 +108,7 @@ const config = {
 			title: "Stuff",
 			type: "fixed",
 			items: [
-				"Added right click event for opening settings on button (1.2.0)"
+				"Fixed for Discord Theme update. (1.3.0)"
 			]
 		}
 
@@ -408,7 +412,7 @@ var MessageFilter = (() => {
 										document.getElementsByClassName("message-button-wrapper").length == 0
 									) {
 										var daButtons = document.querySelector(
-											KSS.parse("|highBackgroundOpacity buttons|")
+											".buttons-3JBrkn"
 										);
 
 										messageButtonMask = document.createElementNS(
@@ -424,7 +428,7 @@ var MessageFilter = (() => {
 
 										var messageButtonInner = document.createElement("div");
 										messageButtonInner.className = KSS.createClassName(
-											"|contents| |pulseButton button| |highBackgroundOpacity button| message-button-inner"
+											"|contents| |pulseButton button| |button| message-button-inner"
 										);
 
 										
