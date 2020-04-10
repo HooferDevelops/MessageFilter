@@ -95,7 +95,7 @@ const config = {
 				github_username: "HooferDevelops"
 			}
 		],
-		version: "1.3.0",
+		version: "1.4.0",
 		description: "Modify the way you send messages.",
 		github:
 			"https://github.com/HooferDevelops/MessageFilter/",
@@ -108,7 +108,7 @@ const config = {
 			title: "Stuff",
 			type: "fixed",
 			items: [
-				"Fixed for Discord Theme update. (1.3.0)"
+				"Fixed positioning of button. (1.4.0)"
 			]
 		}
 
@@ -354,7 +354,7 @@ var MessageFilter = (() => {
 									new Settings.RadioGroup("Enable / Disable", "Show or Hide the message Message Filter Button", this.settings.buttonEnabled, [
 										{name: "Show", value: true, desc: "Show the MessageFilter Toggle Button"},
 										{name: "Hide", value: false, desc: "Hide the MessageFilter Toggle Button"}
-									], (e) => {this.settings.buttonEnabled = e; if (this.settings.buttonEnabled == false ){ messageButton.setAttribute("style", "display: none;") }  else { messageButton.setAttribute("style", "") }; }),
+									], (e) => {this.settings.buttonEnabled = e; if (this.settings.buttonEnabled == false ){ messageButton.setAttribute("style", "display: none;") }  else { messageButton.setAttribute("style", "margin: 0px; padding: 0px;") }; }),
 									new Settings.RadioGroup("Active Charactersheet", "Choose which character sheet to use.", this.settings.defaultText, list, (e) => { this.settings.defaultText = e }),
                                     
 
@@ -441,7 +441,6 @@ var MessageFilter = (() => {
 										messageButtonMask.setAttribute("height", "18");
 										messageButtonMask.setAttribute("viewBox", "0 0 24 24");
 										messageButtonMask.setAttribute("class", "icon-3D60ES");
-										messageButton.setAttribute("style", "")
 
 										var messageButtonIcon = document.createElementNS(
 											"http://www.w3.org/2000/svg",
@@ -454,7 +453,7 @@ var MessageFilter = (() => {
 											"d",
 											"M18 9V14C18 15.657 19.344 17 21 17V18H3V17C4.656 17 6 15.657 6 14V9C6 5.686 8.686 3 12 3C15.314 3 18 5.686 18 9ZM11.9999 21C10.5239 21 9.24793 20.19 8.55493 19H15.4449C14.7519 20.19 13.4759 21 11.9999 21Z"
 										);
-										if (this.settings.buttonEnabled == false ){ console.log("disabled"); messageButton.setAttribute("style", "display: none;") }  else { console.log("enabled"); messageButton.setAttribute("style", "") };
+										if (this.settings.buttonEnabled == false ){ console.log("disabled"); messageButton.setAttribute("style", "display: none;") }  else { console.log("enabled"); messageButton.setAttribute("style", "margin: 0px; padding: 0px;") };
 										messageButtonMask.appendChild(messageButtonIcon);
 										messageButtonInner.appendChild(messageButtonMask);
 										messageButton.appendChild(messageButtonInner);
@@ -516,7 +515,7 @@ var MessageFilter = (() => {
 							} else if (messageInner && messageInner.children[0] && !enabled) {
 								messageInner.setAttribute("style", "");
 								messageInner.children[0].setAttribute("style", "");
-								messageButton.setAttribute("style", "");
+								messageButton.setAttribute("style", "margin: 0px; padding: 0px;");
 							}
 						}
 
