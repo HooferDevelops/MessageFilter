@@ -95,7 +95,7 @@ const config = {
 				github_username: "HooferDevelops"
 			}
 		],
-		version: "1.4.0",
+		version: "1.5.0",
 		description: "Modify the way you send messages.",
 		github:
 			"https://github.com/HooferDevelops/MessageFilter/",
@@ -108,7 +108,7 @@ const config = {
 			title: "Stuff",
 			type: "fixed",
 			items: [
-				"Fixed positioning of button. (1.4.0)"
+				"Fixed positioning of button when enabled. (1.5.0)"
 			]
 		}
 
@@ -510,7 +510,7 @@ var MessageFilter = (() => {
 							if (messageInner && messageInner.children[0] && enabled) {
 								//messageInner.setAttribute("style", "filter: contrast(2);");
 								messageInner.children[0].setAttribute("style", "transform: scale(1.2); color: #42B480;");
-								messageButton.setAttribute("style", "opacity: 1");
+								messageButton.setAttribute("style", "opacity: 1; margin: 0px; padding: 0px;");
 								
 							} else if (messageInner && messageInner.children[0] && !enabled) {
 								messageInner.setAttribute("style", "");
